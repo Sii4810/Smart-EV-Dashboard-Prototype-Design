@@ -1,0 +1,371 @@
+/* --- External CSS (./src/css/index.css) --- */
+
+/* Optional: changes the mouse pointer to indicate it's clickable */
+.btn-wifi, .btn-bluetooth, .btn-lock {
+    cursor: pointer;
+}
+
+.btn-wifi .Rectangle1225,
+.btn-bluetooth .Rectangle1225,
+.btn-lock .Rectangle1225 {
+    transition: background 0.3s ease; /* Makes the color transition look smooth */
+}
+
+/* This class will be added/removed dynamically via Javascript */
+.btn-wifi.active .Rectangle1225,
+.btn-bluetooth.active .Rectangle1225,
+.btn-lock.active .Rectangle1225 {
+    /* Replace this with any color or gradient you prefer when turned ON */
+    background: #4A90E2 !important; 
+}
+
+/* Gears styling */
+.gear-btn {
+    cursor: pointer;
+}
+.gear-btn path {
+    transition: opacity 0.3s ease;
+}
+.gear-btn.active path {
+    opacity: 1.0 !important;
+}
+.gear-btn:not(.active) path {
+    opacity: 0.4 !important;
+}
+
+/* Prevent pointer events on the gear letters so they don't block clicks on background ellipses */
+.P, .R, .N, .D {
+    pointer-events: none;
+}
+
+/* Drive modes styling */
+.mode-btn {
+    cursor: pointer;
+}
+.mode-btn .Rectangle1160 {
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+.mode-btn .Auto, .mode-btn .Eco, .mode-btn .Normal, .mode-btn .Sport {
+    transition: opacity 0.3s ease;
+}
+.mode-btn.active .Rectangle1160 {
+    background: #3E3E4E !important; /* Lighter background when active */
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25) inset !important;
+}
+.mode-btn.active .Auto, .mode-btn.active .Eco, .mode-btn.active .Normal, .mode-btn.active .Sport {
+    opacity: 1.0 !important;
+}
+.mode-btn:not(.active) .Rectangle1160 {
+    background: #1E1E2A !important;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25) !important;
+}
+.mode-btn:not(.active) .Auto, .mode-btn:not(.active) .Eco, .mode-btn:not(.active) .Normal, .mode-btn:not(.active) .Sport {
+    opacity: 0.60 !important;
+}
+
+/* Temp buttons, Fan speed, and Safety controls styling */
+.temp-btn, .fan-btn, .btn-sensor, .btn-triangle {
+    cursor: pointer;
+}
+.temp-btn .Rectangle1225 {
+    transition: background 0.3s ease;
+}
+.temp-btn.active .Rectangle1225 {
+    background: #4A90E2 !important;
+}
+.btn-sensor .Rectangle1160, .btn-triangle .Rectangle1160 {
+    transition: background 0.3s ease;
+}
+.btn-sensor, .btn-triangle {
+    transition: opacity 0.3s ease;
+}
+.btn-sensor.active, .btn-triangle.active {
+    opacity: 1.0 !important;
+}
+.btn-sensor.active .Rectangle1160, .btn-triangle.active .Rectangle1160 {
+    background: #3E3E4E !important;
+}
+.fan-leaf {
+    transition: fill 0.3s ease;
+}
+.fan-leaf.highlighted {
+    fill: #4A90E2 !important;
+}
+
+/* Navigation and new interactive button cursor rules */
+.btn-above-1, .btn-above-2, .btn-chair, .btn-map, .btn-envelope, .btn-phone-sidebar, .btn-settings, .btn-station, .btn-battery-icon, .btn-tyre-icon, .btn-home, .btn-back, .btn-stop, .btn-send-sini, .btn-send-jom, .btn-send-bmw,
+.dial-btn, .btn-call-action, .btn-dial-backspace, .contact-item, .toggle-switch, .interactive-toggle, .btn-navigate-station {
+    cursor: pointer;
+}
+
+.btn-above-1 .Bg, .btn-above-2 .Rectangle1225 {
+    transition: background 0.3s ease;
+}
+
+.btn-above-1.active .Bg {
+    background: #4A90E2 !important;
+}
+
+.btn-above-2.active .Rectangle1225 {
+    background: #4A90E2 !important;
+}
+
+/* --- Tablet Container & Scaling System --- */
+html {
+    background-color: #121212 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    min-height: 100vh !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    width: 1024px !important;
+    height: 768px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: relative !important;
+    overflow: hidden !important;
+    background-color: #000 !important;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85) !important;
+    border-radius: 24px !important;
+    border: 12px solid #2d2d2d !important;
+    box-sizing: content-box !important;
+    flex-shrink: 0 !important;
+}
+
+/* Scales any absolute 1920x1080 mockup container down to 1024x768 */
+body > div[style*="1920px"],
+body > div[style*="width: 1920px"],
+body > div.MainPage,
+body > div.Desktop2,
+body > div.Desktop3,
+body > div.Desktop5,
+body > div.Desktop6,
+body > div.Desktop7,
+body > div.Desktop8,
+body > div.Desktop9TyreConditionRefined,
+body > div.Desktop10,
+body > div.Desktop11 {
+    width: 1920px !important;
+    height: 1080px !important;
+    transform: scale(0.533333, 0.711111) !important;
+    transform-origin: top left !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+}
+
+/* Custom UI elements styling */
+.BatteryLevelBar {
+    background: #00C0E8 !important;
+    border-radius: 12.5px;
+    box-shadow: 0 0 8px rgba(0, 192, 232, 0.5);
+    z-index: 1;
+}
+
+/* Switch & Toggle Styling for Battery dashboard settings */
+.toggle-switch-container {
+    transition: background 0.3s ease;
+}
+.toggle-switch-container.active {
+    background: linear-gradient(90deg, #00C0E8 0%, #00E8B4 100%) !important;
+}
+.toggle-switch-knob {
+    transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dial-btn {
+    transition: background 0.2s ease, transform 0.1s ease;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dial-btn:active {
+    background: rgba(255, 255, 255, 0.15) !important;
+    transform: scale(0.95);
+}
+
+.contact-item {
+    transition: background 0.2s ease;
+    border-radius: 16px;
+}
+.contact-item:hover {
+    background: rgba(255, 255, 255, 0.08) !important;
+}
+.contact-item:active {
+    background: rgba(255, 255, 255, 0.15) !important;
+}
+
+.btn-call-action:active {
+    transform: scale(0.9);
+}
+.btn-dial-backspace:active {
+    transform: scale(0.9);
+}
+
+/* ===== Battery Page (Desktop11) Layout Fixes ===== */
+
+/* Shrink top Battery Overview card so it takes less vertical space */
+.Desktop11 > div[style*="height: 429px"] {
+    height: 380px !important;
+}
+
+/* Move the 7-day history bar up to fill the gap */
+.Desktop11 > div[style*="top: 553px"] {
+    top: 503px !important;
+    height: 130px !important;
+}
+/* Shrink the bar chart heights inside history */
+.Desktop11 > div[style*="top: 553px"] .Frame[style*="height: 80px"] {
+    height: 65px !important;
+}
+
+/* Move the bottom row (Cell Temps + Power Consumption) up */
+.Desktop11 > div[style*="top: 715px"] {
+    top: 645px !important;
+    height: 420px !important;
+}
+
+/* Right-side panel: reduce gap between sections and top padding */
+.Desktop11 > div[style*="left: 1351px"] {
+    gap: 12px !important;
+}
+/* Charging station card at top of right panel */
+.Desktop11 > div[style*="left: 1351px"] > div:first-child {
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+}
+/* Charge Settings card inner padding */
+.Desktop11 > div[style*="left: 1351px"] > div:last-child {
+    padding-top: 14px !important;
+    padding-bottom: 14px !important;
+}
+/* Each setting row inside the charge settings panel */
+.Desktop11 .toggle-switch {
+    flex-shrink: 0;
+}
+
+/* ===== Tyre Page (Desktop9TyreConditionRefined) Layout Fixes ===== */
+
+/* Reduce the outer padding so more vertical space is available */
+.Desktop9TyreConditionRefined > .Frame[style*="height: 1080px"] {
+    padding-bottom: 12px !important;
+}
+
+/* Reduce header area padding */
+.Desktop9TyreConditionRefined > .Frame > .Frame:first-child {
+    padding-top: 18px !important;
+    padding-bottom: 10px !important;
+}
+
+/* Left column (Tyre Position): reduce padding and car diagram size */
+.Desktop9TyreConditionRefined .Frame[style*="width: 360px"] {
+    padding: 16px !important;
+    gap: 8px !important;
+}
+/* Car body outline - shrink the car diagram */
+.Desktop9TyreConditionRefined .Frame[style*="width: 160px"][style*="height: 340px"] {
+    height: 280px !important;
+}
+/* Move rear tyre indicators up accordingly */
+.Desktop9TyreConditionRefined .Frame[style*="top: 199px"][style*="left: -79px"] {
+    top: 165px !important;
+}
+.Desktop9TyreConditionRefined .Frame[style*="top: 199px"][style*="left: 171px"] {
+    top: 165px !important;
+}
+/* Rear trunk area rectangle */
+.Desktop9TyreConditionRefined .Rectangle[style*="top: 241px"] {
+    top: 200px !important;
+}
+/* Bottom summary row (AVG PRESSURE, AVG HEALTH, AVG TEMP) */
+.Desktop9TyreConditionRefined .Frame[style*="width: 360px"] > .Frame:last-child {
+    gap: 5px !important;
+}
+.Desktop9TyreConditionRefined .Frame[style*="height: 75px"][style*="padding-bottom: 27px"] {
+    height: auto !important;
+    padding-bottom: 12px !important;
+}
+
+/* Middle column: reduce inner gaps */
+.Desktop9TyreConditionRefined .Frame[style*="flex: 1 1 0"][style*="gap: 14px"] {
+    gap: 8px !important;
+}
+
+/* Overall condition / Est. remaining / Alerts / Avg Temp bar - reduce padding */
+.Desktop9TyreConditionRefined .Frame[style*="padding-left: 1px"][style*="padding-right: 1px"][style*="padding-top: 5px"] {
+    padding-top: 3px !important;
+    padding-bottom: 3px !important;
+}
+.Desktop9TyreConditionRefined .Frame[style*="padding-left: 1px"] .Frame[style*="padding-top: 18px"] {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    gap: 4px !important;
+}
+
+/* Tyre detail panel - reduce padding */
+.Desktop9TyreConditionRefined .Frame[style*="flex: 1 1 0"][style*="padding: 25px"][style*="gap: 20px"] {
+    padding: 16px !important;
+    gap: 12px !important;
+}
+
+/* Tyre image container - limit height */
+.Desktop9TyreConditionRefined .Frame[style*="width: 260px"][style*="background: #151A1E"] {
+    max-height: 520px !important;
+    overflow: hidden !important;
+}
+.Desktop9TyreConditionRefined .Frame[style*="width: 260px"][style*="background: #151A1E"] img {
+    max-height: 500px !important;
+    object-fit: cover !important;
+}
+
+/* Right column: reduce gaps and padding */
+.Desktop9TyreConditionRefined .Frame[style*="width: 320px"][style*="gap: 12px"] {
+    gap: 8px !important;
+}
+/* Alert cards */
+.Desktop9TyreConditionRefined .Frame[style*="width: 320px"] > .Frame[style*="padding-top: 17px"] {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+}
+/* Tyre Settings panel */
+.Desktop9TyreConditionRefined .Frame[style*="padding-top: 21px"][style*="padding-bottom: 14px"][style*="padding-left: 21px"] {
+    padding-top: 12px !important;
+    padding-bottom: 8px !important;
+}
+/* Setting rows inside tyre settings */
+.Desktop9TyreConditionRefined .Frame[style*="padding-top: 12px"][style*="padding-bottom: 13px"][style*="box-shadow"] {
+    padding-top: 7px !important;
+    padding-bottom: 7px !important;
+}
+/* Last setting row (no box-shadow inset - the last one) */
+.Desktop9TyreConditionRefined .Frame[style*="padding-top: 12px"][style*="padding-bottom: 12px"][style*="gap: 12px"]:not([style*="box-shadow"]) {
+    padding-top: 7px !important;
+    padding-bottom: 7px !important;
+}
+
+/* Tyre detail info rows - reduce gaps */
+.Desktop9TyreConditionRefined .Frame[style*="gap: 11px"] {
+    gap: 6px !important;
+}
+/* Tyre detail stat badges row */
+.Desktop9TyreConditionRefined .Frame[style*="gap: 8px"][style*="display: inline-flex"] > .Frame[style*="padding-top: 12px"][style*="padding-bottom: 12px"][style*="border-radius: 12px"] {
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+}
+
+/* Health circle - slightly smaller */
+.Desktop9TyreConditionRefined .Frame[style*="width: 90px"][style*="height: 90px"] {
+    width: 75px !important;
+    height: 75px !important;
+    padding: 14px !important;
+}
+
+
